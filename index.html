@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SellerOS</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Chart.js (для дашборда) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/chart.umd.min.js"></script>
+  <!-- SheetJS (экспорт в Excel) -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.19.3/dist/xlsx.full.min.js"></script>
+
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body class="h-screen w-screen">
+  <div id="app" class="h-screen w-screen"></div>
+
+  <!-- Core (no ES modules; works via file://) -->
+  <script src="./storage.js"></script>
+  <script src="./migrations.js"></script>
+  <script src="./ui.js"></script>
+
+  <!-- Modules -->
+  <script src="./modules/profile.js"></script>
+  <script src="./modules/settings.js"></script>
+  <script src="./modules/currency.js"></script>
+  <script src="./modules/calculator.js"></script>
+  <script src="./modules/notes.js"></script>
+  <script src="./modules/templates.js"></script>
+  <script src="./modules/inventory.js"></script>
+  <script src="./modules/orderModel.js"></script>
+  <script src="./modules/finance.js"></script>
+  <script src="./modules/orders.js"></script>
+
+  <!-- App -->
+  <script src="./app.js"></script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+:root {
+  --accent: #22c55e;
+  --sidebar-w: 280px;
+  --sidebar-w-collapsed: 84px;
+}
+
+html, body { height: 100%; }
+
+.fp-scroll { scrollbar-width: thin; scrollbar-color: rgba(148,163,184,.6) transparent; }
+.fp-scroll::-webkit-scrollbar { width: 10px; height: 10px; }
+.fp-scroll::-webkit-scrollbar-thumb {
+  background: rgba(148,163,184,.45);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+.fp-card { border-radius: 16px; }
+.fp-btn { border-radius: 12px; }
+.fp-input { border-radius: 12px; }
+
+.fp-sidebar { width: var(--sidebar-w); }
+.fp-sidebar.collapsed { width: var(--sidebar-w-collapsed); }
+
+/* Dark theme */
+[data-theme="dark"] body { background: #0b1220; color: #e5e7eb; }
+
+/* Smooth */
+* { transition: background-color .2s ease, color .2s ease, border-color .2s ease; }
+
+
+/* Blue theme */
+[data-theme="blue"] body { background: #07162e; color: #e5e7eb; }
+[data-theme="blue"] .fp-surface { background: #0b2246; border-color: rgba(148,163,184,.25); }
+[data-theme="blue"] .fp-surface-2 { background: #0d2a57; border-color: rgba(148,163,184,.25); }
+[data-theme="blue"] .fp-border { border-color: rgba(148,163,184,.25) !important; }
+
+
+/* --- SellerOS v1.1 additions --- */
+.fp-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:.4rem;
+  padding:.25rem .6rem;
+  border-radius:999px;
+  font-size:12px;
+  border:1px solid rgba(148,163,184,.35);
+  white-space:nowrap;
+}
+.fp-badge--work{ background: rgba(234,179,8,.12); border-color: rgba(234,179,8,.35); }
+.fp-badge--done{ background: rgba(16,185,129,.12); border-color: rgba(16,185,129,.35); }
+.fp-badge--problem{ background: rgba(244,63,94,.12); border-color: rgba(244,63,94,.35); }
+.fp-badge--cancel{ background: rgba(148,163,184,.12); border-color: rgba(148,163,184,.35); }
+
+.fp-icon-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:34px;
+  height:34px;
+  border-radius:12px;
+  border:1px solid rgba(148,163,184,.35);
+}
+.fp-icon-btn:hover{ filter: brightness(1.05); }
+.fp-kpi{
+  border:1px solid rgba(148,163,184,.25);
+  border-radius:16px;
+  padding:12px 14px;
+}
+.fp-kpi .v{ font-size:18px; font-weight:700; }
+.fp-kpi .k{ font-size:12px; opacity:.7; }
+
+
+
+.fp-btn-primary{
+  background: var(--accent);
+  color: white;
+}
+.fp-btn-primary:hover{ filter: brightness(0.95); }
+.fp-badge{ padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; display: inline-flex; align-items:center; gap:6px; }
+
+[data-density="compact"] .fp-card { padding: 12px !important; }
+[data-density="compact"] .fp-input { padding-top: 6px; padding-bottom: 6px; }
+[data-density="compact"] .fp-table td, 
+[data-density="compact"] .fp-table th { padding-top: 8px; padding-bottom: 8px; }
+
+/* --- Global Search (Ctrl+K) --- */
+.fp-overlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(2,6,23,.55);
+  display: none;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 64px 16px;
+  z-index: 50;
+}
+.fp-overlay.open{ display:flex; }
+.fp-modal{
+  width: min(920px, 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(148,163,184,.25);
+  overflow: hidden;
+  box-shadow: 0 20px 80px rgba(0,0,0,.35);
+}
+.fp-modal-header{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding: 14px 14px;
+  border-bottom: 1px solid rgba(148,163,184,.18);
+}
+.fp-kbd{
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(148,163,184,.28);
+  opacity: .85;
+}
+.fp-results{ max-height: 520px; overflow:auto; }
+.fp-result-item{ display:flex; gap:12px; align-items:flex-start; padding: 12px 14px; cursor:pointer; }
+.fp-result-item:hover, .fp-result-item.active{ background: rgba(148,163,184,.12); }
+.fp-result-ico{ width: 34px; height: 34px; border-radius: 14px; display:flex; align-items:center; justify-content:center; border:1px solid rgba(148,163,184,.22); }
+.fp-result-title{ font-weight: 650; }
+.fp-result-sub{ font-size: 12px; opacity:.75; margin-top:2px; }
+.fp-chip{ font-size: 11px; padding: 2px 8px; border-radius: 999px; border: 1px solid rgba(148,163,184,.22); opacity:.9; }
+
+/* --- Empty states --- */
+.fp-empty{
+  padding: 24px 18px;
+  text-align: center;
+  border-radius: 18px;
+  border: 1px dashed rgba(148,163,184,.35);
+}
+.fp-empty-ico{
+  width: 54px; height: 54px;
+  margin: 0 auto 10px;
+  border-radius: 18px;
+  display:flex; align-items:center; justify-content:center;
+  border: 1px solid rgba(148,163,184,.22);
+  font-size: 24px;
+}
+.fp-empty-title{ font-weight: 700; }
+.fp-empty-desc{ margin-top: 6px; font-size: 13px; opacity: .8; }
